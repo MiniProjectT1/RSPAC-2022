@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css"><link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.css">
+    <title>RSPAC</title>
+    <style>
+      *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: url('images/Background.jpeg');
+    background-attachment: fixed;
+    background-size: cover;
+  
+    background-repeat: no-repeat;
+}
+#head{
+    position: absolute;
+    top: 0px;
+    font-family: 'Poppins', sans-serif;
+}
+#myCarousel{
+    margin: 50px auto;
+    height: 200px;
+    width: 100%;
+    border-radius: 5px;
+    /* border: 1px solid grey; */
+    box-shadow: 4px 4px 5px rgba(0,0,0,.4);
+    overflow: hidden;
+}
+.item{
+    width: 100%;
+}
+img{
+    object-fit: fill;
+}
+.content{
+    margin-top: -20px;
+}
+h3{
+    color: rgb(41, 40, 40);
+    font-weight: 600;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+p{
+    font-family: 'Open Sans', sans-serif;
+    line-height: 20px;
+}
+.container{
+    position: relative;
+    width: 95%;
+    height: max-content ;
+    margin: 20px 0;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 50px rgba(0,0,0,.7);
+    background-color: white;
+}
+/* .black{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    background-color: rgba(0,0,0,.7);
+} */
+
+
+.line{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    border-top: 1px solid rgb(180, 178, 178); 
+}
+form{
+    margin-top: 20px;
+    padding: 0 30px;
+}
+label{
+    font-size: 15px;
+    color: #353434;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+input[type="text"],input[type="email"],input[type="number"]{
+    width: 100%;
+    padding: 5px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid grey;
+}
+input[type="text"]:focus, input[type="email"]:focus,input[type="number"]:focus{
+    outline: none;
+    border-bottom: 2px solid rgb(108, 4, 117);
+}
+select{   
+    appearance: none;
+    outline: 0;
+    width: 100%;
+    height: 35px;
+    background-color: white;
+    padding-left:10px ;
+    border-radius: 7px;
+}
+option:focus{
+    background-color: darkcyan;
+    color: white;
+}
+span{
+    margin-left: 10px;
+}
+#radio{
+    font-weight: 100;
+    margin-left: 10px;
+}
+#submit{
+    float: right;
+    margin-top: 30px;
+    width: 125px;
+    height: 40px;
+    padding: 7px;
+    border: none;
+    border-radius: 7px;
+    background:linear-gradient(135deg,rgb(62, 4, 116),rgb(62, 4, 116),rgb(128, 59, 2),rgb(133, 85, 179),rgb(62, 4, 116));
+    color: white;
+    cursor: pointer;
+    transition: .5s;
+}
+#submit:hover{
+    background:  linear-gradient(135deg,rgb(133, 85, 179),rgb(62, 4, 116),rgb(128, 59, 2),rgb(62, 4, 116),rgb(62, 4, 116));
+}
+
+#memberid{
+    display: none;
+}
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.7); 
+  }
+  #submit_image{
+    width: 150px;
+    height: 40px;
+    background-color: rgb(114, 5, 141);
+    color: white;
+    border-radius: 8px;
+}
+#image_preview{
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    max-height: 200px;
+    margin-top: -15px;
+    overflow: scroll;
+    object-fit:scale-down;
+    visibility: hidden;
+}
+.imagebox{
+    display: none;
+    position: relative;
+    width: 100%;
+    height: 70%;
+    margin-top: 20px;
+    padding:10px;
+    border:1px solid rgb(155, 153, 153);
+    border-radius: 20px;
+    object-fit: contain;
+    transition: .3s;
+}
+.imagebox:hover{
+    background-size: 75%;
+    box-shadow: 0 0 10px rgba(0,0,0,.7);
+}
+#desc{
+    font-size: 12px;
+    color: grey;
+    margin:-5px 0;
+    line-height: 20px;
+}
+#upload_file::-webkit-file-upload-button{
+    margin: 20px 0 20px 0;
+    width: 140px;
+    height: 35px;
+    font-size: 15px;
+    border: none;
+    background-color: rgb(93, 3, 121);
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+  .modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 50px;
+    border: 1px solid #888;
+    width: 80%; 
+    border-radius: 20px;
+    height:max-content;
+  }
+  
+  .close {
+    color: rgb(136, 135, 135);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .checkmark__circle {
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    stroke-width: 5;
+    stroke-miterlimit: 10;
+    stroke: #7ac142;
+    fill: none;
+    animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+  }
+  
+  .checkmark {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: block;
+    stroke-width: 2;
+    stroke: #fff;
+    stroke-miterlimit: 10;
+    margin: 10% auto;
+    box-shadow: inset 0px 0px 0px #7ac142;
+    animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+  }
+  
+  .checkmark__check {
+    transform-origin: 50% 50%;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+  }
+  
+  @keyframes stroke {
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+  @keyframes scale {
+    0%, 100% {
+      transform: none;
+    }
+    50% {
+      transform: scale3d(1.1, 1.1, 1);
+    }
+  }
+  @keyframes fill {
+    100% {
+      box-shadow: inset 0px 0px 0px 30px #7ac142;
+    }
+  }
+#ok{
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    width: 75px;
+    height: 37px;
+    background-color: rgb(4, 87, 83);
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+#whatsapp{
+    color: rgb(60, 2, 87);
+}
+@media only screen and (max-width: 600px) {
+    .modal-content{
+        height: 350px;
+        width: 90%;
+        padding: 20px;
+    }
+    #ok{
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    form{
+        padding: 10px;
+    }
+  }
+  @media only screen and (min-width: 1000px) {
+      .modal-content{
+          margin-top: 10%;
+      }
+  }
+  
+      </style>
+</head>
+<body >
+  <div class="black"></div>
+  <div class="container">
+    <h2 id="head">RSPAC-2022</h2>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="images/Rspac Official Poster.png" style="width:100%;">
+        </div>
+
+        <div class="item active">
+          <img src="images/Avengers.jpg" style="width:100%;">
+        </div>
+  
+        <div class="item">
+          <img src="images/helping hands.jpg" style="width:100%;">
+        </div>
+      </div>
+  
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </a>
+    </div>
+    <div class="content">
+      <h3 id="register">About the event</h3>
+      <p>Watch videos about AngularJS Fundamentals
+        Read the Material Design specifications for components, animations, styles, and layouts.
+      >Watch videos about AngularJS Fundamentals
+        Read the Material Design specifications for components, animations, styles, and layouts.
+        >Watch videos about AngularJS Fundamentals
+        Read the Material Design specifications for components, animations, styles, and layouts.
+        >Watch videos about AngularJS Fundamentals
+        Read the Material Design specifications for components, animations, styles, and layouts.</p>
+    </div>
+    <div class="line"></div>
+
+    <div class="resgistration">
+      <h3 style="font-weight: 700;font-size: 30px;margin-left: 10px;">Register now</h3>
+<!-- REGISTRATION FORM -->
+    <?var url = getUrl();?>
+    <form method="post" action="<?= url ?>" >
+    <!-- NAME -->
+        <label for="name">Name</label><br>
+        <input type="text" name="Name" id="name" placeholder="Enter your name"><br><br>
+    <!-- ROLL NUMBER -->
+        <label for="rollno">Roll Number</label><br>
+        <input type="text" name="Roll_Number" id="rollno" placeholder="Enter your rollno"><br><br>
+    <!-- EMAIL ID -->
+        <label for="mail">Email Id</label><br>
+        <input type="email" name="Email_Id" id="mail" placeholder="Enter your email"><br><br>
+    <!-- CONTACT NUMBER -->
+        <label for="phone">Contact Number</label><br>
+        <input type="number" name="Contact_Number" id="phone" minlength="10" maxlength="10" placeholder="Enter your contact number"><br><br>
+    <!-- YEAR -->
+        <label for="year">Year</label><br>
+        <select name="Year" id="year">
+          <option selected disabled>--Select your Year--</option>
+          <option value="1">I</option>
+          <option value="2">II</option>
+          <option value="3">III</option>
+          <option value="4">IV</option>
+        </select><br><br>
+    <!-- BRANCH -->
+        <label for="branch">Branch</label><br>
+        <select name="Branch" id="branch">
+          <option selected disabled>--Select your Branch--</option>
+          <option value="CSE">CSE</option>
+          <option value="ECE">ECE</option>
+          <option value="EEE">EEE</option>
+          <option value="CIVIL">CIVIL</option>
+          <option value="ME">ME</option>
+          <option value="AGRI">AGRI</option>
+        </select><br><br>
+    <!-- IEEE MEMBER -->
+        <label for="ieee">IEEE Member</label><br>
+        <select name="IEEE_Member" id="ieee" onchange="MemberShip()">
+          <option  selected disabled>--Select--</option>
+          <option value="ieee">Yes</option>
+          <option value="nonieee">No</option>
+        </select><br><br>
+    <!-- MEMBERSHIP ID -->
+        <div id="memberid">
+          <label for="memid">Membership ID</label><br>
+          <input type="text" name="Membership_Id" id="memid" placeholder="Enter your membership Id"><br><br>
+        </div>
+    <!-- PAYMENT MODE -->
+        <label for="payment">Payment Mode</label><br>
+        <select name="Payment_Mode" id="payment" onchange="UploadImage()">
+          <option  selected disabled>--Select your Year--</option>
+          <option value="online">Online Payment</option>
+          <option value="offline">Offline Payment</option>
+        </select><br>
+    <!-- PAYMENT SCNAPSHOT -->
+          <div class="imagebox">
+          <label for="images" id="upimg">Upload image </label><br>
+          <p id="desc" id="img_line">Upload the snapshot of your payment</p>
+          <div id="image_preview"></div>
+              <input type="file" name="upload_file[] Payment_Image" id='image_upload' onchange="preview_image(),LoadFile(event)"  multiple/>
+              <input type="hidden" id="fileData" name="fileData" />
+              <input type="hidden" id="mimeType" name="mimeType" />
+              <input type="hidden" id="fileName" name="fileName" />
+          </div><br>
+        <input type="submit" id="submit" value="Submit" onclick="Registered()">
+      </form>
+    </div>
+  </div>
+
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+      <circle class="checkmark__circle" cx="30" cy="30" r="25" fill="none"/>
+      <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+    </svg>
+    <p style="font-size: 20px;line-height: 25px;font-weight: 800;">You have successfully registered for RSPAC-2022 event </p>
+    <h3 style="font-size: 15px;font-family: Arial, Helvetica, sans-serif;">Join the following whatsapp group</h3>
+    <a href="#" id="whatsapp">RSPAC-2022 Participants</a>
+    <button id="ok" onclick="CloseModal()">OK</button>
+  </div>
+
+</div>
+
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-animate.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-aria.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-messages.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.js"></script>
+
+</body>
+<script type="text/javascript">
+function preview_image() 
+{
+ var total_file=document.getElementById("upload_file").files.length;
+ for(var i=0;i<total_file;i++)
+ {
+  $('#image_preview').append("<img src='"+URL.createObjectURL(event.target.files[i])+"'><br>");
+ }
+ var preview = document.getElementById("image_preview");
+ preview.style.visibility = "visible";
+}
+
+  $('.carousel').carousel({
+  interval:2000
+})
+var modal = document.getElementById("myModal");
+var btn = document.getElementById("btn");
+var span = document.getElementsByClassName("close")[0];
+
+function Registered() {
+  var pr=document.getElementById("print");
+  modal.style.display = "block";
+}
+
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+function CloseModal(){
+    modal.style.display = "none";
+}
+function UploadImage(){
+  var imgbox = document.getElementsByClassName("imagebox")[0];
+  var pay = document.getElementById("payment");
+  if(pay.value == "online")
+      imgbox.style.display="block";
+  else
+      imgbox.style.display="none";
+}
+function MemberShip(){
+  var mem = document.getElementById("ieee");
+  var memid = document.getElementById("memberid");
+
+  if(mem.value == "ieee")
+    memid.style.display="block";
+  else
+    memid.style.display="none";
+}
+
+function LoadFile(event)
+{
+  var file = event.target.files[0];
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    console.log(e.target.result);
+    var fileData = e.target.result.substr(e.target.result.indexOf(",")+1);
+    var mimeTypeStart = e.target.result.indexOf("data:") + 5;
+    var mimeTypeEnd = e.target.result.indexOf(";");
+    var mimeType = e.target.result.substr(mimeTypeStart, mimeTypeEnd - mimeTypeStart);
+    var fileName = file.name;
+    document.getElementById("fileData").value = fileData;
+    document.getElementById("mimeType").value = mimeType;
+    document.getElementById("fileName").value = fileName;
+  };    
+  reader.readAsDataURL(file);
+}
+// function SubmitDetails(){
+//   const scriptURL = 'https://script.google.com/macros/s/AKfycbwTCvW_M5vgUrsQ0LZD3UXLjHsd5ipqhf-AYehxsac2lIC5EtH0aULQs7GZoJtPp0JK/exec'
+//   const form = document.forms['google-sheet']
+
+//   form.addEventListener('submit', e => {
+//     e.preventDefault()
+//     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+//       .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+//       .catch(error => console.error('Error!', error.message))
+//   })
+// }
+</script>
+
+</html>
