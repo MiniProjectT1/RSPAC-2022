@@ -1,81 +1,17 @@
-angular.module('BlankApp', ['ngMaterial'],
-function($mdThemingProvider) {
-$mdThemingProvider.theme('docs-dark', 'default')
-  .primaryPalette('yellow')
-  .dark();
-})
-.controller('AppCtrl', ['$interval',
-function($interval) {
-  var self = this;
-
-  self.activated = true;
-  self.determinateValue = 30;
-
-  // Iterate every 100ms, non-stop and increment
-  // the Determinate loader.
-  $interval(function() {
-
-    self.determinateValue += 1;
-    if (self.determinateValue > 100) {
-      self.determinateValue = 30;
-    }
-
-  }, 100);
+function preview_image() 
+{
+ var total_file=document.getElementById("upload_file").files.length;
+ for(var i=0;i<total_file;i++)
+ {
+  $('#image_preview').append("<img src='"+URL.createObjectURL(event.target.files[i])+"'><br>");
+ }
+ var preview = document.getElementById("image_preview");
+ preview.style.visibility = "visible";
 }
-]);
-angular.module('BlankApp', ['ngMaterial'])
-.controller('AppCtrl', function($scope, $mdDialog) {
-  $scope.status = '  ';
-  $scope.customFullscreen = false;
 
-  $scope.showAlert = function (ev) {
-    $mdDialog.show(
-      $mdDialog.alert()
-        .parent(angular.element(document.querySelector('#popupContainer')))
-        .clickOutsideToClose(true)
-        .title('This is an alert title')
-        .textContent('You can specify some description text in here.')
-        .ariaLabel('Alert Dialog Demo')
-        .ok('Got it!')
-        .targetEvent(ev)
-    );
-  };
-
-  $scope.showConfirm = function(ev) {
-    var confirm = $mdDialog.confirm()
-      .title('Would you like to delete your debt?')
-      .textContent('All of the banks have agreed to forgive you your debts.')
-      .ariaLabel('Lucky day')
-      .targetEvent(ev)
-      .ok('Please do it!')
-      .cancel('Sounds like a scam');
-
-    $mdDialog.show(confirm).then(function () {
-      $scope.status = 'You decided to get rid of your debt.';
-    }, function () {
-      $scope.status = 'You decided to keep your debt.';
-    });
-  };
-
-
-
-
-
- 
-  function DialogController($scope, $mdDialog) {
-    $scope.hide = function () {
-      $mdDialog.hide();
-    };
-
-    $scope.cancel = function () {
-      $mdDialog.cancel();
-    };
-
-    $scope.answer = function (answer) {
-      $mdDialog.hide(answer);
-    };
-  }
-});
+  $('.carousel').carousel({
+  interval:2000
+})
 var modal = document.getElementById("myModal");
 var btn = document.getElementById("btn");
 var span = document.getElementsByClassName("close")[0];
@@ -93,4 +29,22 @@ span.onclick = function() {
 
 function CloseModal(){
     modal.style.display = "none";
+}
+function UploadImage(){
+  var imgbox = document.getElementsByClassName("imagesbox")[0];
+  var imgbox = document.getElementsByClassName("imagesbox")[0];
+  var pay = document.getElementById("payment");
+  if(pay.value == "online")
+      imgbox.style.display="block";
+  else
+      imgbox.style.display="none";
+}
+function MemberShip(){
+  var mem = document.getElementById("ieee");
+  var memid = document.getElementById("memberid");
+
+  if(mem.value == "ieee")
+    memid.style.display="block";
+  else
+    memid.style.display="none";
 }
