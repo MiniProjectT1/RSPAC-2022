@@ -58,22 +58,22 @@
     <div id="resgistration">
       <h3 style="font-weight: 700;font-size: 30px;margin-left: 10px;">Register now</h3>
 <!-- REGISTRATION FORM -->
-    <form method="post" autocomplete="off" name="google-sheet" autocomplete="on">
+    <form name="sheet" autocomplete="on">
     <!-- NAME -->
         <label for="name">Name</label><br>
-        <input type="text" name="Name" id="name" placeholder="Enter your name"><br><br>
-    <!-- ROLL NUMBER -->
-        <label for="rollno">Roll Number</label><br>
-        <input type="text" name="Roll_Number" id="rollno" placeholder="Enter your rollno"><br><br>
+        <input type="text" name="entry.1582957699" id="name" placeholder="Enter your name"><br><br>
     <!-- EMAIL ID -->
         <label for="mail">Email Id</label><br>
-        <input type="email" name="Email_Id" id="mail" placeholder="Enter your email"><br><br>
+        <input type="email" name="entry.2068279985" id="mail" placeholder="Enter your email"><br><br>
     <!-- CONTACT NUMBER -->
         <label for="phone">Contact Number</label><br>
-        <input type="number" name="Contact_Number" id="phone" minlength="10" maxlength="10" placeholder="Enter your contact number"><br><br>
+        <input type="number" name="entry.2093651610" id="phone" minlength="10" maxlength="10" placeholder="Enter your contact number"><br><br>
+    <!-- ROLL NUMBER -->
+         <label for="rollno">Roll Number</label><br>
+         <input type="text" name="entry.102711090" id="rollno" placeholder="Enter your rollno"><br><br>
     <!-- YEAR -->
         <label for="year">Year</label><br>
-        <select name="Year" id="year">
+        <select name="entry.1632899500" id="year">
           <option id="optdis" selected disabled>Select your Year</option>
           <option value="1st Year">I</option>
           <option value="2nd Year">II</option>
@@ -82,18 +82,18 @@
         </select><br><br>
     <!-- BRANCH -->
         <label for="branch">Branch</label><br>
-        <select name="Branch" id="branch">
+        <select name="entry.1916304869 id="branch">
           <option id="optdis" selected disabled>Select your Branch</option>
           <option value="CSE">CSE</option>
           <option value="ECE">ECE</option>
           <option value="EEE">EEE</option>
-          <option value="CIVIL">CIVIL</option>
           <option value="MECH">MECH</option>
+          <option value="CIVIL">CIVIL</option>
           <option value="AGRI">AGRICULTURE</option>
         </select><br><br>
     <!-- IEEE MEMBER -->
         <label for="ieee">IEEE Member</label><br>
-        <select name="IEEE_Member" id="ieee" onchange="MemberShip()">
+        <select name="entry.531432391" id="ieee" >
           <option id="optdis" selected disabled>Select</option>
           <option value="IEEE Member">Yes</option>
           <option value="Non-IEEE Member">No</option>
@@ -101,12 +101,12 @@
     <!-- MEMBERSHIP ID -->
         <div id="memberid">
           <label for="memid">Membership ID</label><br>
-          <input type="text" name="Membership_Id" id="memid" placeholder="Enter your membership Id"><br><br>
+          <input type="text" value="NULL" name="entry.179827760" id="memid" placeholder="Enter your membership Id"><br><br>
         </div>
     <!-- PAYMENT MODE -->
         <label for="payment">Payment Mode</label><br>
         <p id="desc">Mention the mode that you have paid registration fee.</p>
-        <select name="Payment_Mode" id="payment" onchange="UploadImage()">
+        <select name="entry.1498101399" id="payment" onchange="UploadImage()">
           <option id="optdis" selected disabled>Select your Payment Mode</option>
           <option value="Online Payment">Online Payment</option>
           <option value="Offline Payment">Offline Payment</option>
@@ -116,7 +116,7 @@
           <label for="images" id="upimg">Upload image </label><br>
           <p id="desc" id="img_line">Upload the snapshot of your payment</p>
           <p style="font-weight: 700;font-size: 12px;color: red;">*Rename your file with your name and rollno</p>
-          <a href="https://drive.google.com/folderview?id=10qrEOGK2nhmnWfOmsCYr3mufW8CoKE_E">Upload file through this google drive link</a>
+          <a href="https://drive.google.com/folderview?id=1CzfDrP3gPq79F0QGuOKGEUpXZojrzm_L">Upload file through this google drive link</a>
           </div><br>
         <input type="submit" id="submit" value="Submit">
       </form>
@@ -143,14 +143,16 @@
 </body>
 <script type="text/javascript" src="script.js"></script>
 <script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbxFkPOB17XM86v32YwzwhV54D7nY74Z2_iGE6dT4M49CajPmrW2n-7Nz2mqSX1v4gZjBg/exec'
-    const form = document.forms['google-sheet']
-
+    const scriptURL = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSebclwz8SPo2KRNqQkEZahvVhfBDHy__poyQjiegU3jsT8j2w/formResponse'
+    const form = document.forms['sheet'];
     form.addEventListener('submit', e => {
     e.preventDefault()
     Registered(e)
+    setTimeout(function(){
+      DisplayMessage()
+    },1500);
     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-    .then(response => DisplayMessage())
+    .then(response => function(){})
     .catch(error => console.error('Error!', error.message))
   })
 </script>
