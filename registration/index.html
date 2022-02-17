@@ -44,18 +44,18 @@
     </div>
     <div class="content">
       <h3 id="register">About the event</h3>
-      <p>Watch videos about AngularJS Fundamentals
-        Read the Material Design specifications for components, animations, styles, and layouts.
-      >Watch videos about AngularJS Fundamentals
-        Read the Material Design specifications for components, animations, styles, and layouts.
-        >Watch videos about AngularJS Fundamentals
-        Read the Material Design specifications for components, animations, styles, and layouts.
-        >Watch videos about AngularJS Fundamentals
-        Read the Material Design specifications for components, animations, styles, and layouts.</p>
+      <span id="details">Venue : </span> <span id="values"> ECE Seminar hall</span><br>
+      <span id="details">Date : </span> <span id="values"> 24th and 25th February</span><br>
+      <span id="details">Timings : </span> <span id="values">9:30am - 4:00pm</span><br>
+
+      <p><p>
     </div>
     <div class="line"></div>
-
-    <div class="resgistration">
+    <a href="#resgistration">
+      <button id="dispreg" onclick="DispRegistration()">Register</button>
+    </a>
+    
+    <div id="resgistration">
       <h3 style="font-weight: 700;font-size: 30px;margin-left: 10px;">Register now</h3>
 <!-- REGISTRATION FORM -->
     <form method="post" autocomplete="off" name="google-sheet" autocomplete="on">
@@ -104,7 +104,6 @@
           <input type="text" name="Membership_Id" id="memid" placeholder="Enter your membership Id"><br><br>
         </div>
     <!-- PAYMENT MODE -->
-    
         <label for="payment">Payment Mode</label><br>
         <p id="desc">Mention the mode that you have paid registration fee.</p>
         <select name="Payment_Mode" id="payment" onchange="UploadImage()">
@@ -117,7 +116,7 @@
           <label for="images" id="upimg">Upload image </label><br>
           <p id="desc" id="img_line">Upload the snapshot of your payment</p>
           <p style="font-weight: 700;font-size: 12px;color: red;">*Rename your file with your name and rollno</p>
-          <a href="https://drive.google.com/folderview?id=1CzfDrP3gPq79F0QGuOKGEUpXZojrzm_L">Upload file through this google drive link</a>
+          <a href="https://drive.google.com/folderview?id=10qrEOGK2nhmnWfOmsCYr3mufW8CoKE_E">Upload file through this google drive link</a>
           </div><br>
         <input type="submit" id="submit" value="Submit">
       </form>
