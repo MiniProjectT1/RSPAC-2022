@@ -59,11 +59,13 @@
       <h3 style="font-weight: 700;font-size: 30px;margin-left: 10px;">Register now</h3>
       <form action="" method="post">
         <label for="name">Name</label><br>
-        <input type="text" id="name" placeholder="Enter your name..." required><br><br>
-        <label for="rollno">Rollno</label><br>
-        <input type="text" id="rollno" placeholder="Enter your rollno..." required><br><br>
-        <label for="mail">Email Id</label>
-        <input type="email" name="email" id="mail" placeholder="Enter your email..." required><br><br>
+        <input type="text" id="name" placeholder="Enter your name" required><br><br>
+        <label for="rollno">Roll Number</label><br>
+        <input type="text" id="rollno" placeholder="Enter your rollno" required><br><br>
+        <label for="mail">Email Id</label><br>
+        <input type="email" name="email" id="mail" placeholder="Enter your email" required><br><br>
+        <label for="phone">Contact Number</label><br>
+        <input type="number" name="phone" id="phone" minlength="10" maxlength="10" placeholder="Enter your contact number"><br><br>
         <label for="year">Year</label><br>
         <select name="" id="year" aria-placeholder="SE">
           <option  selected disabled>--Select your Year--</option>
@@ -79,9 +81,31 @@
           <option value="ECE">ECE</option>
           <option value="EEE">EEE</option>
           <option value="CIVIL">CIVIL</option>
-          <option value="MECH">MECH</option>
+          <option value="ME">ME</option>
           <option value="AGRI">AGRI</option>
-        </select>
+        </select><br><br>
+        <label for="ieee">IEEE Member</label><br>
+        <select name="" id="ieee"  onchange="MemberShip()">
+          <option  selected disabled>--Select--</option>
+          <option value="ieee">Yes</option>
+          <option value="nonieee">No</option>
+        </select><br><br>
+        <div id="memberid">
+          <label for="memid">Membership ID</label><br>
+          <input type="text" id="memid" name="" placeholder="Enter your membership Id"><br><br>
+        </div>
+        <label for="payment">Payment Mode</label><br>
+        <select name="payment" id="payment" onchange="UploadImage()">
+          <option  selected disabled>--Select your Year--</option>
+          <option value="online">Online Payment</option>
+          <option value="offline">Offline Payment</option>
+        </select><br>
+        <div class="imagesbox">
+          <label for="images" id="upimg"><h4 >Upload image </h4></label>
+          <p id="desc" id="img_line">Upload the snapshot of your payment</p>
+          <div id="image_preview"></div>
+              <input type="file" id="upload_file" name="upload_file[] Product_Images" id='image_upload' onchange="preview_image(), hideimage()" onclick="" multiple/>
+          </div><br>
         <input type="submit" id="submit" value="Submit">
       </form>
     </div>
@@ -113,10 +137,5 @@
 
 </body>
 <script src="script.js"></script>
-<script>
-  
-  $('.carousel').carousel({
-  interval:2000
-})
-</script>
+
 </html>
