@@ -134,6 +134,7 @@ span{
 }
 #resgistration{
     display: none;
+    padding-top: 15px;
 }
 #submit{
     float: right;
