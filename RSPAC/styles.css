@@ -79,7 +79,7 @@ label{
     color: #353434;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-input[type="text"],input[type="email"]{
+input[type="text"],input[type="email"],input[type="number"]{
     width: 100%;
     padding: 5px;
     border-top: none;
@@ -87,7 +87,7 @@ input[type="text"],input[type="email"]{
     border-right: none;
     border-bottom: 1px solid grey;
 }
-input[type="text"]:focus, input[type="email"]:focus{
+input[type="text"]:focus, input[type="email"]:focus,input[type="number"]:focus{
     outline: none;
     border-bottom: 2px solid rgb(108, 4, 117);
 }
@@ -96,6 +96,7 @@ select{
     outline: 0;
     width: 100%;
     height: 35px;
+    background-color: white;
     padding-left:10px ;
     border-radius: 7px;
 }
@@ -104,6 +105,10 @@ option:focus{
     color: white;
 }
 span{
+    margin-left: 10px;
+}
+#radio{
+    font-weight: 100;
     margin-left: 10px;
 }
 #submit{
@@ -117,6 +122,15 @@ span{
     background-color: rgb(62, 4, 116);
     color: white;
 }
+#desc{
+    font-size: 12px;
+    color: grey;
+    margin:-5px 0;
+    line-height: 5px;
+}
+#memberid{
+    display: none;
+}
 .modal {
     display: none; 
     position: fixed;
@@ -129,7 +143,50 @@ span{
     background-color: rgb(0,0,0); 
     background-color: rgba(0,0,0,0.7); 
   }
-  
+  #submit_image{
+    width: 150px;
+    height: 40px;
+    background-color: rgb(114, 5, 141);
+    color: white;
+    border-radius: 8px;
+}
+#image_preview{
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    max-height: 200px;
+    overflow: scroll;
+    object-fit:scale-down;
+    visibility: hidden;
+}
+.imagesbox{
+    display: none;
+    position: relative;
+    width: 100%;
+    height: 70%;
+    margin-top: 20px;
+    padding: 5px 10px;
+    border:1px solid rgb(155, 153, 153);
+    border-radius: 20px;
+    object-fit: contain;
+
+    transition: .3s;
+}
+.imagesbox:hover{
+    background-size: 75%;
+    box-shadow: 0 0 10px rgba(0,0,0,.7);
+}
+#upload_file::-webkit-file-upload-button{
+
+    margin: 20px 0 20px 0;
+    width: 140px;
+    height: 35px;
+    font-size: 15px;
+    border: none;
+    background-color: rgb(93, 3, 121);
+    color: white;
+    border-radius: 8px;
+}
   .modal-content {
     position: relative;
     background-color: #fefefe;
