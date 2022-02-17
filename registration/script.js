@@ -55,10 +55,13 @@ function UploadImage(){
 function MemberShip(){
   var mem = document.getElementById("ieee");
   var memid = document.getElementById("memberid");
-
-  if(mem.value == "IEEE Member")
+  var id = document.getElementById("memid");
+  if(mem.value == "IEEE Member"){
     memid.style.display="block";
-  else
+    id.value = "";
+  }
+  else{
     memid.style.display="none";
+    id.value = "NULL";
+  }
 }
-
