@@ -36,6 +36,14 @@ span.onclick = function() {
 function CloseModal(){
     modal.style.display = "none";
 }
+
+
+function DispRegistration(){
+  var dispreg = document.getElementById("dispreg");
+  var regblock = document.getElementById("resgistration");
+  regblock.style.display = "block";
+  dispreg.style.display = "none";
+}
 function UploadImage(){
   var imgbox = document.getElementsByClassName("imagebox")[0];
   var pay = document.getElementById("payment");
