@@ -15,7 +15,6 @@ body{
 #head{
     /* position: absolute;
     top: 0px; */
-    line-height: 20px;
     font-family: 'Poppins', sans-serif;
 }
 #myCarousel{
@@ -35,6 +34,8 @@ img{
 }
 .content{
     margin-top: -20px;
+    text-align: justify;
+    text-justify: inter-word;
 }
 h3{
     color: rgb(41, 40, 40);
