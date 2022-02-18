@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css"><link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Poppins:wght@700&family=Redressed&display=swap" rel="stylesheet">
+    <title>RSPAC</title>
+</head>
+<body >
+  <div class="black"></div>
+  <div class="container">
+    <h2 style="font-size: 20px;font-family: 'Redressed';">SRU IEEE STUDENT BRANCH PRESENTS</h2>
+    <h1 id="head">RSPAC 2022</h1>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="images/Rspac Official Poster.png" style="width:100%;">
+        </div>
+
+        <div class="item">
+          <img src="images/Rspac.png" style="width:100%;">
+        </div>
+
+        <div class="item active">
+          <img src="images/SRU Logo.jpg" style="width:100%;">
+        </div>
+      </div>
+  
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </a>
+    </div>
+    <div class="content">
+      <h3 id="register">About the event</h3>
+      <p>Regional Student Professional Awareness Congress (RSPAC) is a two day event organised by IEEE Student Branch of SR
+        University.</p>
+      <p>IEEE Student Branch is a biggest student community in the SR University which always strive to
+        implement and organize the innovative events and activities. This enhances students skills and help them in building
+        their career and excel in the world.</p>
+      <p>RSPAC is a professional event which includes technical stuff that aims
+        for exchanging of knowledge and ideas. It is the annual event organised by the SRU IEEE Student Branch, where every
+        passionate and knowledge aspirant participate in this event and get benifitted.</p>
+      <p>RSPAC 2022 is the best platform for students to participate and acquire the awareness and
+        knowledge on the trending technologies like artificial intelligence, metaverse, cryptocurrency etc. Honourable
+        speakers from various places visit here and spend their time with students in addressing the content and enlighten
+        them.</p>
+      <span id="details">Date : </span> <span id="values"> 24th and 25th February</span><br>
+      <span id="details">Venue : </span> <span id="values"> ECE Seminar hall</span><br>
+      <span id="details">Timings : </span> <span id="values">9:30am - 4:00pm</span><br>
+
+      <p><p>
+    </div>
+    <div class="line"></div>
+    <a href="#resgistration">
+      <button id="dispreg" onclick="DispRegistration()">Register</button>
+    </a>
+    
+    <div id="resgistration">
+      <h3 style="font-weight: 700;font-size: 30px;margin-left: 10px;">Register now</h3>
+<!-- REGISTRATION FORM -->
+    <form name="sheet" autocomplete="on">
+    <!-- NAME -->
+        <label for="name">Name</label><br>
+        <input type="text" name="entry.1582957699" id="name" placeholder="Enter your name" required><br><br>
+    <!-- EMAIL ID -->
+        <label for="mail">Email Id</label><br>
+        <input type="email" name="entry.2068279985" id="mail" placeholder="Enter your email" required><br><br>
+    <!-- CONTACT NUMBER -->
+        <label for="phone">Contact Number</label><br>
+        <input type="number" name="entry.2093651610" id="phone" minlength="10" maxlength="10" placeholder="Enter your contact number" required><br><br>
+    <!-- ROLL NUMBER -->
+         <label for="rollno">Roll Number</label><br>
+         <input type="text" name="entry.102711090" id="rollno" placeholder="Enter your rollno" required><br><br>
+    <!-- YEAR -->
+        <label for="year">Year</label><br>
+        <select name="entry.1632899500" id="year" required>
+          <option id="optdis" selected disabled>Select your Year</option>
+          <option value="1st Year">I</option>
+          <option value="2nd Year">II</option>
+          <option value="3rd Year">III</option>
+          <option value="4th Year">IV</option>
+        </select><br><br>
+    <!-- BRANCH -->
+        <label for="branch">Branch</label><br>
+        <select name="entry.1916304869" id="branch" required>
+          <option id="optdis" selected disabled>Select your Branch</option>
+          <option value="CSE">CSE</option>
+          <option value="ECE">ECE</option>
+          <option value="EEE">EEE</option>
+          <option value="MECH">MECH</option>
+          <option value="CIVIL">CIVIL</option>
+          <option value="AGRI">AGRICULTURE</option>
+        </select><br><br>
+    <!-- IEEE MEMBER -->
+        <label for="ieee" >IEEE Member</label><br>
+        <select name="entry.531432391" id="ieee" onchange="MemberShip()" required>
+          <option id="optdis" selected disabled>Select</option>
+          <option value="IEEE Member">Yes</option>
+          <option value="Non-IEEE Member">No</option>
+        </select><br><br>
+    <!-- MEMBERSHIP ID -->
+        <div id="memberid">
+          <label for="memid">Membership ID</label><br>
+          <input type="text" name="entry.179827760" id="memid" placeholder="Enter your membership Id"><br><br>
+        </div>
+    <!-- PAYMENT MODE -->
+        <label for="payment">Payment Mode</label>
+        <p id="desc" style="line-height: 45px;">Mention the mode that you have paid registration fee.</p>
+        <select name="entry.1498101399" id="payment" onchange="UploadImage()" required>
+          <option id="optdis" selected disabled>Select your Payment Mode</option>
+          <option value="Online Payment">Online Payment</option>
+          <option value="Offline Payment">Offline Payment</option>
+        </select><br>
+    <!-- PAYMENT SCNAPSHOT -->
+          <div class="imagebox">
+          <label for="images" id="upimg">Upload image </label><br>
+          <p style="font-weight: 700;font-size: 12px;color: red;">*Please rename your file with your name and rollno.</p>
+          <a href="https://drive.google.com/folderview?id=1CzfDrP3gPq79F0QGuOKGEUpXZojrzm_L">Upload snapshot of your payment through this google drive link</a>
+          </div><br>
+        <input type="submit" id="submit" value="Submit">
+      </form>
+    </div>
+  </div>
+
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+      <circle class="checkmark__circle" cx="30" cy="30" r="25" fill="none"/>
+      <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+    </svg>
+    <p style="text-align: center;" id="wait">Please wait a moment...</p>
+    <div id="success">
+      <p style="font-size: 20px;line-height: 28px;font-weight: 800;">You have successfully registered for RSPAC-2022 event </p>
+      <h3 style="font-size: 15px;font-family: Arial, Helvetica, sans-serif;">Join the following whatsapp group for more updates</h3>
+      <button id="whatsapp"> <img src="images/whatsapp.png" alt="whatsapp"  width="28px"><a href="https://chat.whatsapp.com/K4H9xLVVnkBHBadj4Pp7tp" id="what">Join Group</a></button>
+      <!-- <button id="ok" onclick="CloseModal()">OK</button> -->
+    </div>
+  </div>
+</div>
+
+</body>
+<script type="text/javascript" src="script.js"></script>
+<script>
+    const scriptURL = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSebclwz8SPo2KRNqQkEZahvVhfBDHy__poyQjiegU3jsT8j2w/formResponse'
+    const form = document.forms['sheet'];
+    form.addEventListener('submit', e => {
+    e.preventDefault()
+    Registered(e)
+    setTimeout(function(){
+      DisplayMessage()
+    },1500);
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+    .then(response => function(){})
+    .catch(error => console.error('Error!', error.message))
+  })
+</script>
+</html>
