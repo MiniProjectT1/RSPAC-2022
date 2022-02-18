@@ -40,7 +40,7 @@ function CloseModal(){
 
 function DispRegistration(){
   var dispreg = document.getElementById("dispreg");
-  var regblock = document.getElementById("resgistration");
+  var regblock = document.getElementById("registration");
   regblock.style.display = "block";
   dispreg.style.display = "none";
 }
