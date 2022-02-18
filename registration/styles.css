@@ -57,8 +57,9 @@ p{
     margin: 20px 0;
     padding: 30px;
     border-radius: 20px;
-    box-shadow: 0 0 50px rgba(0,0,0,.7);
-    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 50px rgba(0,0,0,.9);
+    background-color: rgba(255, 255, 255,.9);
+    animation: BackAnime 4s infinite alternate-reverse;
 }
 /* .black{
     position: absolute;
@@ -70,7 +71,23 @@ p{
     background-color: rgba(0,0,0,.7);
 } */
 
-
+@keyframes BackAnime{
+    0%{
+        box-shadow: 0 0 1000px blue;
+    }
+    25%{
+        box-shadow: 0 0 1000px rgb(43, 196, 243);
+    }
+    50%{
+        box-shadow: 0px 10px 1000px rgb(245, 242, 58);
+    }
+    75%{
+        box-shadow: 0 20px 1000px rgb(219, 16, 226);
+    }
+    100%{
+        box-shadow: 0px -10px 1000px rgb(0, 255, 55);
+    }
+}
 .line{
     width: 100%;
     margin-left: auto;
@@ -81,6 +98,7 @@ p{
 form{
     margin-top: 20px;
     padding: 0 30px;
+    height: max-content;
 }
 label{
     font-size: 15px;
@@ -120,6 +138,21 @@ span{
     font-weight: 100;
     margin-left: 10px;
 }
+#guidelines{
+    width: 150px;
+    height: max-content;
+    padding: 7px 10px;
+    border: 1px solid rgb(19, 104, 161);
+    border-radius: 7px;
+    color: rgb(19, 104, 161);
+    transition: .3s;
+    box-shadow: 3px 3px 5px rgba(0,0,0,.5);
+}
+#guidelines:hover{
+    text-decoration: none;
+    letter-spacing: 2px;
+    background-color: rgb(218, 253, 241);
+}
 #dispreg{
     position: relative;
     left: 50%;
@@ -130,14 +163,20 @@ span{
     color: white;
     border: none;
     border-radius:10px ;
+    transition: .2s;
     background-color: blueviolet;
 }
 #dispreg:hover{
+    letter-spacing: 2px;
     background-color: rgb(96, 32, 156);
 }
-#resgistration{
+#registration{
     display: none;
+    background-color: white;
+    border-radius: 20px;
     padding-top: 15px;
+    padding-bottom: 100px;
+    box-shadow: 0 0 10px rgb(0,0,0,.2);
 }
 #submit{
     float: right;
@@ -155,6 +194,8 @@ span{
 }
 #submit:hover{
     background: rgb(85, 1, 105);
+    letter-spacing: 2px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,.7);
     /* background:  linear-gradient(135deg,rgb(133, 85, 179),rgb(62, 4, 116),rgb(128, 59, 2),rgb(62, 4, 116),rgb(62, 4, 116)); */
 }
 
