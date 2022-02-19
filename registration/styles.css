@@ -58,7 +58,7 @@ p{
 }
 .container{
     position: relative;
-    width: 93%;
+    width: 94%;
     height: max-content ;
     margin: 20px 0;
     padding: 30px;
@@ -172,9 +172,11 @@ span{
     background:url('images/next.png') no-repeat 0 0;
     background-size: 20px;
 }
+
 #showqr{
-    width: 150px;
-    padding: 5px;
+    width: 100px;
+    font-size: 11px;
+    margin: 8px 0px;
     border: 1px solid rgb(4, 108, 177);
     color: rgb(4, 108, 177);
     border-radius: 10px;
@@ -185,6 +187,7 @@ span{
 }
 #qrimage{
     display: none;
+    border-radius: 2px;
 }
 #dispreg{
     position: relative;
@@ -203,8 +206,10 @@ span{
     letter-spacing: 2px;
     background-color: rgb(96, 32, 156);
 }
+
 #registration{
     display: none;
+    width: 100%;
     background-color: white;
     border-radius: 20px;
     padding-top: 15px;
@@ -440,4 +445,18 @@ span{
           width: 60%;
       }
   }
-  
+  @media  screen and (min-width : 600px) {
+    .qrcode{
+        display: flex;
+        align-items: center;
+    }
+    #showqr{
+        width: 100px;
+        font-size: 11px;
+        margin: 8px 0px 8px 20px;
+        border: 1px solid rgb(4, 108, 177);
+        color: rgb(4, 108, 177);
+        border-radius: 10px;
+        background-color: transparent;
+    }
+  }
