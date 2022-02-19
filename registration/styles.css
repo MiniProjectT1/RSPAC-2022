@@ -154,11 +154,14 @@ span{
     background-color: rgb(218, 253, 241);
 }
 #bullets::before{
-    /* content: url('images/next.png'); */
-    /* background-image: url('images/next.png'); */
-    display: inline;
-    background-size: 10px;
-    width: 10px;
+    display:inline-block;
+    height:20px;
+    width:20px;
+    margin-right: 5px;
+    content: "";
+    vertical-align: middle;
+    background:url('images/next.png') no-repeat 0 0;
+    background-size: 20px;
 }
 #showqr{
     width: 150px;
