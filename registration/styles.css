@@ -159,7 +159,7 @@ span{
     width:20px;
     margin-right: 5px;
     content: "";
-    vertical-align: middle;
+    vertical-align: bottom;
     background:url('images/next.png') no-repeat 0 0;
     background-size: 20px;
 }
