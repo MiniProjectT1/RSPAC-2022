@@ -59,7 +59,7 @@ p{
     border-radius: 20px;
     box-shadow: 0 0 50px rgba(0,0,0,.9);
     background-color: rgba(255, 255, 255,.9);
-    animation: BackAnime 3s infinite alternate-reverse;
+    animation: BackAnime 4s infinite alternate-reverse;
 }
 /* .black{
     position: absolute;
@@ -152,6 +152,13 @@ span{
     text-decoration: none;
     letter-spacing: 2px;
     background-color: rgb(218, 253, 241);
+}
+#bullets::before{
+    /* content: url('images/next.png'); */
+    /* background-image: url('images/next.png'); */
+    display: inline;
+    background-size: 10px;
+    width: 10px;
 }
 #showqr{
     width: 150px;
