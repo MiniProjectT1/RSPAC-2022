@@ -9,7 +9,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Poppins:wght@700&family=Redressed&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Poppins:wght@700&family=Redressed&display=swap" rel="stylesheet"> --><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Noto+Sans&family=Open+Sans:wght@300&family=Poppins:wght@500&family=Redressed&display=swap" rel="stylesheet">
     <title>RSPAC</title>
 </head>
 <body >
@@ -51,15 +51,15 @@
     </div>
     <div class="content">
       <h3 id="register">About the event</h3>
-      <p>Regional Student Professional Awareness Congress (RSPAC) is a two day event organised by IEEE Student Branch of SR
+      <p id="contlines">Regional Student Professional Awareness Congress (RSPAC) is a two day event organised by IEEE Student Branch of SR
         University.</p>
-      <p>IEEE Student Branch is a biggest student community in the SR University which always strive to
+      <p id="contlines">IEEE Student Branch is a biggest student community in the SR University which always strive to
         implement and organize the innovative events and activities. This enhances students skills and help them in building
         their career and excel in the world.</p>
-      <p>RSPAC is a professional event which includes technical stuff that aims
+      <p id="contlines">RSPAC is a professional event which includes technical stuff that aims
         for exchanging of knowledge and ideas. It is the annual event organised by the SRU IEEE Student Branch, where every
         passionate and knowledge aspirant participate in this event and get benifitted.</p>
-      <p>RSPAC 2022 is the best platform for students to participate and acquire the awareness and
+      <p id="contlines">RSPAC 2022 is the best platform for students to participate and acquire the awareness and
         knowledge on the trending technologies like artificial intelligence, metaverse, cryptocurrency etc. Honourable
         speakers from various places visit here and spend their time with students in addressing the content and enlighten
         them.</p>
@@ -69,11 +69,12 @@
       <span id="details">Entry fee for Non-IEEE Members : </span> <span id="values"> Rs.500/-</span><br>
       <span id="details">Entry fee for IEEE Members : </span> <span id="values"> Rs.400/-</span><br>
       <span id="details">Eligibility : </span> <span id="values"> All students from all years and all branches</span><br><br>
-      <p id="bullets">Event has technical sessions along with Ice breaking sessions</p>
-      <p id="bullets">Lunch and snacks will be provided for two days</p>
-      <p id="bullets">Certificates will be provided for all the participants</p>
-      <p id="bullets">Participants with best performances will be awarded with gifts and prizes</p>
-      <span id="details" style="font-size: 18px;">Online Payment number : 9100441874 <br>(Account name : Sai Kiran)</span><br>
+      <p id="bullets">Event has technical sessions along with Ice breaking sessions and fun tasks.</p>
+      <p id="bullets">Lunch and snacks will be provided for two days.</p>
+      <p id="bullets">Certificates will be provided for all the participants.</p>
+      <p id="bullets">Participants with best performances will be awarded with gifts and prizes.</p>
+      <!-- <p id="bullets"></p> -->
+      <span id="details" style="font-size: 18px;">Online Payment number : 9100441874 <br><span style="font-size: 15px;margin-left: 0;">(Account name : Sai Kiran)</span></span><br>
       <button id="showqr" onclick="ShowQR()">Show QR Code</button><br>
 
       <img src="images/QR Code.jpg" id="qrimage" alt="qrcode" width="150px">
@@ -89,7 +90,7 @@
     </a>
     
     <div id="registration">
-      <h3 style="font-weight: 700;font-size: 30px;margin-left: 10px;">Register now</h3>
+      <h3 style="font-weight: 700;font-size: 30px;margin-left: 10px;font-family: poppins;">Register now</h3>
 <!-- REGISTRATION FORM -->
     <form name="sheet" autocomplete="on">
     <!-- NAME -->
