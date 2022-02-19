@@ -36,7 +36,22 @@ span.onclick = function() {
 function CloseModal(){
     modal.style.display = "none";
 }
+var flag=0;
 
+function ShowQR(){
+  var qrimage = document.getElementById("qrimage");
+  var qrbtn = document.getElementById("showqr");
+  if(flag){
+    qrimage.style.display = "none";
+    qrbtn.innerHTML = "Show QR Code";
+    flag=0;
+  }
+  else{
+    qrimage.style.display = "block";
+    qrbtn.innerHTML = "Hide QR Code";
+    flag=1;
+  }
+}
 
 function DispRegistration(){
   var dispreg = document.getElementById("dispreg");
