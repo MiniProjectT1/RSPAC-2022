@@ -90,7 +90,7 @@ p{
         box-shadow: 0 20px 1000px rgb(219, 16, 226);
     }
     100%{
-        box-shadow: 0px -10px 1000px rgb(0, 255, 55);
+        box-shadow: 0px 0px 1500px rgb(31, 230, 74);
     }
 }
 .line{
