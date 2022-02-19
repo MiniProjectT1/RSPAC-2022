@@ -59,7 +59,7 @@ p{
     border-radius: 20px;
     box-shadow: 0 0 50px rgba(0,0,0,.9);
     background-color: rgba(255, 255, 255,.9);
-    animation: BackAnime 4s infinite alternate-reverse;
+    animation: BackAnime 3s infinite alternate-reverse;
 }
 /* .black{
     position: absolute;
@@ -152,6 +152,16 @@ span{
     text-decoration: none;
     letter-spacing: 2px;
     background-color: rgb(218, 253, 241);
+}
+#showqr{
+    width: 150px;
+    padding: 5px;
+    border: 1px solid rgb(24, 147, 230);
+    color: rgb(24, 147, 230);
+    border-radius: 10px;
+}
+#qrimage{
+    display: none;
 }
 #dispreg{
     position: relative;
