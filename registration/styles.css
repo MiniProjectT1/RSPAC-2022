@@ -37,10 +37,11 @@ img{
     margin-top: -20px;
     text-align: justify;
     font-family: 'Montserrat', sans-serif;
-    text-justify: inter-word;
 }
 #contlines{
     line-height: 25px;
+    text-justify: inter-word;
+
 }
 h3{
     color: rgb(41, 40, 40);
@@ -57,7 +58,7 @@ p{
 }
 .container{
     position: relative;
-    width: 95%;
+    width: 93%;
     height: max-content ;
     margin: 20px 0;
     padding: 30px;
@@ -174,9 +175,13 @@ span{
 #showqr{
     width: 150px;
     padding: 5px;
-    border: 1px solid rgb(24, 147, 230);
-    color: rgb(24, 147, 230);
+    border: 1px solid rgb(4, 108, 177);
+    color: rgb(4, 108, 177);
     border-radius: 10px;
+    background-color: transparent;
+}
+#showqr:hover{
+    background-color: rgb(218, 234, 252);
 }
 #qrimage{
     display: none;
@@ -400,6 +405,7 @@ span{
     height: max-content;
     border-radius: 100px;
     color: green;
+    margin-top: 5px;
     padding: 5px 10px;
     border: 1px solid green;    
 }
@@ -431,6 +437,7 @@ span{
   @media only screen and (min-width: 1000px) {
       .modal-content{
           margin-top: 5%;
+          width: 60%;
       }
   }
   
