@@ -21,8 +21,12 @@ function Registered(event) {
   var pr=document.getElementById("print");
   modal.style.display = "block";
 }
+
 function DisplayMessage(){
   var success = document.getElementById("success");
+  var hai = document.getElementById("hainame");
+  var name = document.getElementById("name");
+  hainame.innerHTML = "Hai " + name.value + "!";
   var wait = document.getElementById('wait');
   wait.style.display = "none";
   success.style.display = "block";
