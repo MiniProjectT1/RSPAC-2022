@@ -248,7 +248,9 @@ span{
     box-shadow: 2px 2px 10px rgba(0,0,0,.7);
     /* background:  linear-gradient(135deg,rgb(133, 85, 179),rgb(62, 4, 116),rgb(128, 59, 2),rgb(62, 4, 116),rgb(62, 4, 116)); */
 }
-
+#hainame{
+    margin-left: 0;
+}
 #memberid{
     display: none;
 }
