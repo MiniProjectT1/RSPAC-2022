@@ -27,6 +27,17 @@ body{
     box-shadow: 4px 4px 5px rgba(0,0,0,.3);
     overflow: hidden;
 }
+.container{
+    position: relative;
+    width: 94%;
+    height: max-content ;
+    margin: 20px 0;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 50px rgba(0,0,0,.9);
+    background-color: rgba(255, 255, 255,.9);
+    animation: BackAnime 4s infinite alternate-reverse;
+}
 .item{
     width: 100%;
 }
@@ -41,7 +52,6 @@ img{
 #contlines{
     line-height: 25px;
     text-justify: inter-word;
-
 }
 h3{
     color: rgb(41, 40, 40);
@@ -52,21 +62,23 @@ p{
     font-family: 'Open Sans', sans-serif;
     line-height: 20px;
 }
+#extended{
+    color:black;
+    margin-top: -15px;
+    font-size: 13px;
+    padding: 5px;
+    width: max-content;
+    border: 1px solid grey;
+    border-radius: 5px;
+    line-height: 10px;
+    font-style: italic;
+    margin: -15px auto auto;
+}
 #details{
     font-weight: 600;
     margin-left: 0;
 }
-.container{
-    position: relative;
-    width: 94%;
-    height: max-content ;
-    margin: 20px 0;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 0 50px rgba(0,0,0,.9);
-    background-color: rgba(255, 255, 255,.9);
-    animation: BackAnime 4s infinite alternate-reverse;
-}
+
 /* .black{
     position: absolute;
     top: 0;
@@ -122,7 +134,7 @@ input[type="text"],input[type="email"],input[type="number"]{
 }
 input[type="text"]:focus, input[type="email"]:focus,input[type="number"]:focus{
     outline: none;
-    border-bottom: 2px solid rgb(108, 4, 117);
+    border-f: 2px solid rgb(108, 4, 117);
 }
 select{   
     appearance: none;
