@@ -50,7 +50,7 @@
         <span class="glyphicon glyphicon-chevron-right"></span>
       </a>
     </div>
-    <p id="extended">Registrations for both Offline and Online payments are closed. Those who registered before deadline and haven't paid yet have to complete their payment before 22nd February, otherwise thier registrations will be cancelled. </span></p><br>
+    <p id="extended">Last date for offline payment extended till 22nd February <span style="font-size: 12px;">(*For offline payments you can register now and can pay before due date)</span></p><br>
 
     <div class="content">
       <h3 id="register" style="font-family: Montserrat;font-weight: 600;">About the event</h3>
@@ -73,7 +73,7 @@
           <span id="details">Timings : </span> <span id="values">9:30am - 4:00pm</span><br>
           <span id="details">Entry fee for Non-IEEE Members : </span> <span id="values"> Rs.500/-</span><br>
           <span id="details">Entry fee for IEEE Members : </span> <span id="values"> Rs.400/-</span><br>
-          <!-- <span id="details" style="color:rgb(112, 108, 108);font-size: 15px;">Last Date for Online Payment : </span> <span id="values" style="font-size: 15px;color: gray;"> 20th February</span><br> -->
+          <span id="details" style="color:black;font-size: 15px;">Last Date for Online Payment : </span> <span id="values" style="font-size: 15px;"> 20th February</span><br>
           <br>
 
 
@@ -86,6 +86,7 @@
           <p id="bullets">Regular classes will not be suspended for the participants and will run asusually.</p>
           <p id="bullets">Attendance will be provided to all the participants for two days.</p>
 
+          <!-- <p id="bullets"></p> -->
           <div class="qrcode">
             <span id="details" style="font-size: 18px;">Online payment number : 9100441874 <br></span>
 
@@ -98,14 +99,79 @@
           <span id="details" style="font-size: 18px;margin-top: 110px;">For offline payments contact : 9154163095 </span><br>
           <br>
         </div>
+      <!-- <p>*For complete information regarding the event, please download the below document.</p>
+      <a id="guidelines" href="./Form 1.txt" download><img src="images/filedownload.png" alt="filedownload" width="20px"> RSPAC-2022 Info</a> -->
       <p><p>
     </div>
     <div class="line"></div>
-    <img src="images/registration-closed.jpg" alt="registrations closed" id="closed" width="70%">
+    <a href="#registration">
+      <button id="dispreg" onclick="DispRegistration()">Register</button>
+    </a>
+    
     <div id="registration">
       <h3 style="font-weight: 700;font-size: 30px;margin-left: 10px;font-family: poppins;">Register now</h3>
 <!-- REGISTRATION FORM -->
- 
+    <form name="sheet" autocomplete="on">
+    <!-- NAME -->
+        <label for="name">Name</label><br>
+        <input type="text" name="entry.1582957699" id="name" placeholder="Enter your name" required><br><br>
+    <!-- EMAIL ID -->
+        <label for="mail">Email Id</label><br>
+        <input type="email" name="entry.2068279985" id="mail" placeholder="Enter your email" required><br><br>
+    <!-- CONTACT NUMBER -->
+        <label for="phone">Contact Number</label><br>
+        <input type="number" name="entry.2093651610" id="phone" minlength="10" maxlength="10" placeholder="Enter your contact number" required><br><br>
+    <!-- ROLL NUMBER -->
+         <label for="rollno">Roll Number</label><br>
+         <input type="text" name="entry.102711090" id="rollno" placeholder="Enter your rollno" required><br><br>
+    <!-- YEAR -->
+        <label for="year">Year</label><br>
+        <select name="entry.1632899500" id="year" required>
+          <option id="optdis" selected disabled>Select your Year</option>
+          <option value="1st Year">I</option>
+          <option value="2nd Year">II</option>
+          <option value="3rd Year">III</option>
+          <option value="4th Year">IV</option>
+        </select><br><br>
+    <!-- BRANCH -->
+        <label for="branch">Branch</label><br>
+        <select name="entry.1916304869" id="branch" required>
+          <option id="optdis" selected disabled>Select your Branch</option>
+          <option value="CSE">CSE</option>
+          <option value="ECE">ECE</option>
+          <option value="EEE">EEE</option>
+          <option value="MECH">MECH</option>
+          <option value="CIVIL">CIVIL</option>
+          <option value="AGRI">AGRICULTURE</option>
+        </select><br><br>
+    <!-- IEEE MEMBER -->
+        <label for="ieee" >IEEE Member</label><br>
+        <select name="entry.531432391" id="ieee" onchange="MemberShip()" required>
+          <option id="optdis" selected disabled>Select</option>
+          <option value="IEEE Member">Yes</option>
+          <option value="Non-IEEE Member">No</option>
+        </select><br><br>
+    <!-- MEMBERSHIP ID -->
+        <div id="memberid">
+          <label for="memid">Membership ID</label><br>
+          <input type="text" name="entry.179827760" id="memid" placeholder="Enter your membership Id"><br><br>
+        </div>
+    <!-- PAYMENT MODE -->
+        <label for="payment">Payment Mode</label>
+        <p id="desc" style="line-height: 45px;">Mention the mode that you have paid registration fee.</p>
+        <select name="entry.1498101399" id="payment" onchange="UploadImage()" required>
+          <option id="optdis" selected disabled>Select your Payment Mode</option>
+          <option value="Online Payment">Online Payment</option>
+          <option value="Offline Payment">Offline Payment</option>
+        </select><br>
+    <!-- PAYMENT SCNAPSHOT -->
+          <div class="imagebox">
+          <label for="images" id="upimg">Upload image </label><br>
+          <p style="font-weight: 700;font-size: 12px;color: red;">*Please rename your file with your name and rollno.</p>
+          <a href="https://drive.google.com/folderview?id=1CzfDrP3gPq79F0QGuOKGEUpXZojrzm_L">Upload snapshot of your payment through this google drive link</a>
+          </div><br>
+        <input type="submit" id="submit" value="Submit">
+      </form>
     </div>
   </div>
 
@@ -129,6 +195,17 @@
 </body>
 <script type="text/javascript" src="script.js"></script>
 <script>
-
+    const scriptURL = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSebclwz8SPo2KRNqQkEZahvVhfBDHy__poyQjiegU3jsT8j2w/formResponse'
+    const form = document.forms['sheet'];
+    form.addEventListener('submit', e => {
+    e.preventDefault()
+    Registered(e)
+    setTimeout(function(){
+      DisplayMessage()
+    },1500);
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+    .then(response => function(){})
+    .catch(error => console.error('Error!', error.message))
+  })
 </script>
 </html>
