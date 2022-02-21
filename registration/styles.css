@@ -35,7 +35,7 @@ body{
     padding: 30px;
     border-radius: 20px;
     box-shadow: 0 0 50px rgba(0,0,0,.9);
-    background-color: rgba(255, 255, 255,.9);
+    background-color: rgba(255, 255, 255,1);
     animation: BackAnime 4s infinite alternate-reverse;
 }
 .item{
@@ -200,6 +200,15 @@ span{
 #qrimage{
     display: none;
     border-radius: 2px;
+}
+#closed{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    /* border: 1px solid grey; */
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
 }
 #dispreg{
     position: relative;
