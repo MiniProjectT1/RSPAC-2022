@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css"><link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"><link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&family=Poppins:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -50,7 +50,6 @@
         <span class="glyphicon glyphicon-chevron-right"></span>
       </a>
     </div>
-    <p id="extended">Last date for offline payment extended till 22nd February <span style="font-size: 12px;">(*For offline payments you can register now and can pay before due date)</span></p><br>
 
     <div class="content">
       <h3 id="register" style="font-family: Montserrat;font-weight: 600;">About the event</h3>
@@ -71,9 +70,6 @@
           <span id="details">Date : </span> <span id="values"> 24th and 25th February, 2022</span><br>
           <span id="details">Venue : </span> <span id="values"> ECE Seminar Hall</span><br>
           <span id="details">Timings : </span> <span id="values">9:30am - 4:00pm</span><br>
-          <span id="details">Entry fee for Non-IEEE Members : </span> <span id="values"> Rs.500/-</span><br>
-          <span id="details">Entry fee for IEEE Members : </span> <span id="values"> Rs.400/-</span><br>
-          <span id="details" style="color:black;font-size: 15px;">Last Date for Online Payment : </span> <span id="values" style="font-size: 15px;"> 20th February</span><br>
           <br>
 
 
@@ -87,126 +83,20 @@
           <p id="bullets">Attendance will be provided to all the participants for two days.</p>
 
           <!-- <p id="bullets"></p> -->
-          <div class="qrcode">
-            <span id="details" style="font-size: 18px;">Online payment number : 9100441874 <br></span>
 
-            <button id="showqr" onclick="ShowQR()" >Show QR Code</button><br>
-          </div>
-          <span style="margin-left: 0; font-style: italic;">(Account name : Sai Kiran)</span><br>
 
     
-          <img src="images/QR Code.jpg" id="qrimage" alt="qrcode" width="150px">
-          <span id="details" style="font-size: 18px;margin-top: 110px;">For offline payments contact : 9154163095 </span><br>
-          <br>
         </div>
-      <!-- <p>*For complete information regarding the event, please download the below document.</p>
-      <a id="guidelines" href="./Form 1.txt" download><img src="images/filedownload.png" alt="filedownload" width="20px"> RSPAC-2022 Info</a> -->
-      <p><p>
     </div>
-    <h3 >Hurry Up! Registrations are going to be closed soon.</h3>
+    <img src="images/registerclosed.png" alt="" width="60%" id="closed">
     <div class="line"></div>
-    <a href="#registration">
-      <button id="dispreg" onclick="DispRegistration()">Register</button>
-    </a>
-    
-    <div id="registration">
-      <h3 style="font-weight: 700;font-size: 30px;margin-left: 10px;font-family: poppins;">Register now</h3>
-<!-- REGISTRATION FORM -->
-    <form name="sheet" autocomplete="on">
-    <!-- NAME -->
-        <label for="name">Name</label><br>
-        <input type="text" name="entry.1582957699" id="name" placeholder="Enter your name" required><br><br>
-    <!-- EMAIL ID -->
-        <label for="mail">Email Id</label><br>
-        <input type="email" name="entry.2068279985" id="mail" placeholder="Enter your email" required><br><br>
-    <!-- CONTACT NUMBER -->
-        <label for="phone">Contact Number</label><br>
-        <input type="number" name="entry.2093651610" id="phone" minlength="10" maxlength="10" placeholder="Enter your contact number" required><br><br>
-    <!-- ROLL NUMBER -->
-         <label for="rollno">Roll Number</label><br>
-         <input type="text" name="entry.102711090" id="rollno" placeholder="Enter your rollno" required><br><br>
-    <!-- YEAR -->
-        <label for="year">Year</label><br>
-        <select name="entry.1632899500" id="year" required>
-          <option id="optdis" selected disabled>Select your Year</option>
-          <option value="1st Year">I</option>
-          <option value="2nd Year">II</option>
-          <option value="3rd Year">III</option>
-          <option value="4th Year">IV</option>
-        </select><br><br>
-    <!-- BRANCH -->
-        <label for="branch">Branch</label><br>
-        <select name="entry.1916304869" id="branch" required>
-          <option id="optdis" selected disabled>Select your Branch</option>
-          <option value="CSE">CSE</option>
-          <option value="ECE">ECE</option>
-          <option value="EEE">EEE</option>
-          <option value="MECH">MECH</option>
-          <option value="CIVIL">CIVIL</option>
-          <option value="AGRI">AGRICULTURE</option>
-        </select><br><br>
-    <!-- IEEE MEMBER -->
-        <label for="ieee" >IEEE Member</label><br>
-        <select name="entry.531432391" id="ieee" onchange="MemberShip()" required>
-          <option id="optdis" selected disabled>Select</option>
-          <option value="IEEE Member">Yes</option>
-          <option value="Non-IEEE Member">No</option>
-        </select><br><br>
-    <!-- MEMBERSHIP ID -->
-        <div id="memberid">
-          <label for="memid">Membership ID</label><br>
-          <input type="text" name="entry.179827760" id="memid" placeholder="Enter your membership Id"><br><br>
-        </div>
-    <!-- PAYMENT MODE -->
-        <label for="payment">Payment Mode</label>
-        <p id="desc" style="line-height: 45px;">Mention the mode that you have paid registration fee.</p>
-        <select name="entry.1498101399" id="payment" onchange="UploadImage()" required>
-          <option id="optdis" selected disabled>Select your Payment Mode</option>
-          <option value="Online Payment">Online Payment</option>
-          <option value="Offline Payment">Offline Payment</option>
-        </select><br>
-    <!-- PAYMENT SCNAPSHOT -->
-          <div class="imagebox">
-          <label for="images" id="upimg">Upload image </label><br>
-          <p style="font-weight: 700;font-size: 12px;color: red;">*Please rename your file with your name and rollno.</p>
-          <a href="https://drive.google.com/folderview?id=1CzfDrP3gPq79F0QGuOKGEUpXZojrzm_L">Upload snapshot of your payment through this google drive link</a>
-          </div><br>
-        <input type="submit" id="submit" value="Submit">
-      </form>
-    </div>
-  </div>
-
-<div id="myModal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
-      <circle class="checkmark__circle" cx="30" cy="30" r="25" fill="none"/>
-      <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
-    </svg>
-    <p style="text-align: center;" id="wait">Please wait a moment...</p>
-    <div id="success">
-      <p style="font-size: 20px;line-height: 28px;font-weight: 800;"><span id="hainame"></span> You have successfully registered for RSPAC-2022 event</p>
-      <h3 style="font-size: 15px;font-family: Arial, Helvetica, sans-serif;">Join the following whatsapp group for more updates</h3>
-      <button id="whatsapp"> <img src="images/whatsapp.png" alt="whatsapp"  width="28px"><a href="https://chat.whatsapp.com/FcgAhY0ff9Y3eaopbAN4Zk" id="what">Join Group</a></button>
-      <!-- <button id="ok" onclick="CloseModal()">OK</button> -->
-    </div>
+  
   </div>
 </div>
 
 </body>
 <script type="text/javascript" src="script.js"></script>
 <script>
-    const scriptURL = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSebclwz8SPo2KRNqQkEZahvVhfBDHy__poyQjiegU3jsT8j2w/formResponse'
-    const form = document.forms['sheet'];
-    form.addEventListener('submit', e => {
-    e.preventDefault()
-    Registered(e)
-    setTimeout(function(){
-      DisplayMessage()
-    },1500);
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-    .then(response => function(){})
-    .catch(error => console.error('Error!', error.message))
-  })
+  
 </script>
 </html>
